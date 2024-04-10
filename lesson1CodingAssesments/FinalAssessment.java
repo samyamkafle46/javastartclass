@@ -32,7 +32,9 @@ public class FinalAssessment {
             System.out.println(ch + " is a consonant.");
         }
     }
-
+    /*
+     * Method which counts the number of vowels in the sentence
+     * */
     public static int countVowels(String str) {
         int count = 0;
         for (int i = 0; i < str.length(); i++) {
@@ -51,6 +53,7 @@ public class FinalAssessment {
         character = Character.toLowerCase(character);
         return (character == 'a' || character == 'e' || character == 'i' || character == 'o' || character == 'u');
     }
+
 }
 
 
