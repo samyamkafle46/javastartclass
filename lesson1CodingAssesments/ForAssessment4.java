@@ -2,7 +2,17 @@ package lesson1CodingAssesments;
 
 import java.util.Scanner;
 
-public class ForAssesment4 {
+public class ForAssessment4 {
+    /*
+    * Note : Armstrong number is a number whose summation of the individual number is equal to the number itself.
+    * Eg: 125 = (1^3)+(2^3)+(5^3) should be equal to 125 if not then it is not an armstrong number
+    * 153 is an Armstrong number because (1^3)+(5^3)+(3^3) = (1+125+27) = 153
+    *
+    * `Prime Number` : the sum of all the positive divisors of the number (excluding the number itself) is equal to the number.
+    * eg : 6 is a perfect number because its proper divisors are 1, 2, and 3, and  1+2+3=6.
+    * 8 is not a perfect number because : it's proper divisors are : 1, 2, 4 and the sum is 1+2+4 = 7 which is not equal to the number so it is not a perfect number.
+    *
+    * */
 
     private static Scanner scanner = new Scanner(System.in);
     private static int userChoice;
@@ -28,6 +38,67 @@ public class ForAssesment4 {
             case 1,9 -> printNaturalNumbers();
             case 2,3,4,5 -> printGeneralOddEvenProblem();
             case 6,7,8 -> performGeneralInNumberCalculations();
+            case 10,11,12 -> primeNumbersGeneralFunction();
+        }
+    }
+
+    private static void primeNumbersGeneralFunction() {
+        /*
+        10 : Java program to check whether a given number is Prime or not using
+            for loop.
+            if the number is divisible by 1 and itself only then it is a prime number else it is not a prime number
+        11. Java program to print all Prime numbers between 1 to n using for loop.
+        12. Java program to find sum of all prime numbers between 1 to n using
+            for loop.
+        */
+        if (userChoice == 10) {
+            checkIfNumberIsPrime();
+        } else if (userChoice == 11) {
+            getNumbersInTheRangeIfPrime(false);
+        } else if (userChoice == 12) {
+            getNumbersInTheRangeIfPrime(true);
+        }
+    }
+
+    private static void getNumbersInTheRangeIfPrime(boolean needSum) {
+        int sum = 0;
+        for (int j = 2; j <= userInputForLoop; j++) {
+            boolean isPrime = true;
+            for (int i=2; i<=Math.sqrt(j);i++ ) {
+                if (j % i == 0) {
+                   isPrime = false;
+                   break;
+                }
+            }
+            if (isPrime) {
+                if (needSum) {
+                    sum += j;
+                } else {
+                    if  (j > 2) {
+                        output += ",";
+                    }
+                    output += j;
+                }
+
+            }
+        }
+        if (needSum)
+            output = String.valueOf(sum);
+
+    }
+
+    private static void checkIfNumberIsPrime() {
+        output = "The given number is a prime number";
+
+        if(userInputForLoop <= 1){
+            output = "The given number is not prime";
+        }
+        // since the prime number is divisible by itself and 1 we can start the loop from the index 2
+        for (int i=2; i<=Math.sqrt(userInputForLoop);i++ ) {
+            if (userInputForLoop % i == 0) {
+                // it is not a prime number since it is divisible by any other number
+                output = "The given number is not a prime number";
+            }
         }
     }
 
@@ -42,7 +113,7 @@ public class ForAssesment4 {
     }
 
     private static void getSumOfDigits() {
-        String enteredNumberString = Integer.toString( userInputForLoop);
+        String enteredNumberString = Integer.toString( userInputForLoop) ;
         int sum = 0;
         for (int i = 0; i< enteredNumberString.length(); i++ ) {
             char individualNumber = enteredNumberString.charAt(i);
