@@ -2,6 +2,9 @@ package lesson1CodingAssesments;
 
 import java.util.Scanner;
 
+/*
+* Assessment 2
+* */
 public class StudentGradeCalculator {
     public static void main(String[] args) {
         /*

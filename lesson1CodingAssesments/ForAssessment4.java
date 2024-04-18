@@ -20,6 +20,7 @@ public class ForAssessment4 {
     private static String output = "";
     private static int total = 0;
 
+
     public static void main(String[] args) {
         System.out.println("Welcome to the loop demonstration program!!!");
         System.out.println("---------------------------------------------");

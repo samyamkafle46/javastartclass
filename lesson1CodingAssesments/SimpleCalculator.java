@@ -2,6 +2,9 @@ package lesson1CodingAssesments;
 
 import java.util.Scanner;
 
+/*
+* Assessment 2
+* */
 public class SimpleCalculator {
     public static float total;
     public static float number1;
